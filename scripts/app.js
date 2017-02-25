@@ -18,37 +18,34 @@ display the value on the page
 */
 
 // var taskForm = document.getElementById("taskForm"); //form
-// //orderded list
 // var button = document.getElementsByTagName("button"); //button
-
-
+//  document.getElementById("taskList").appendChild(newItem);//appends to list unordered list
 // document.getElementById("subBtn").addEventListener("click", submitTask);
-
- function submitTask(taskList, itemText){
- 	//alert("adding new item");
- 	event.preventDefault;
- 	var newItem = document.createElement("li"); //creates an li
- 	newItem.innerText = itemText;
-
-
- 	taskList.appendChild(newItem);//appends value to the li  
-
-// 	var taskInput = document.getElementById("user_task").value //get the value from the input field
-//  	
-//  	document.getElementById("taskList").appendChild(newItem);//appends to list unordered list
-  };
 
 
 var btnNew = document.getElementById("subBtn");//button
-// btnNew.onclick = function() {
-// 	alert("Does this button work?");
-// 	console.log("any errors?");
-// };
 
-btnNew.onclick =  function (){
-var itemText = prompt("What should we name this item");
-submitTask(document.getElementById("taskList"), itemText);//no parenthesis because we want to assign the function to the onclick event and not run as soon as we load the page
-};
+
+function submitTask() {
+	var taskInput = document.getElementsByTagName("input")[0].value;//get the value from the input field	
+	document.getElementsByTagName("input")[0].value = ''; //this clears the field for new items to be added
+
+	var newItem = document.createElement("li"); //ceates an li
+	newItem.innerHTML = taskInput;//makes a list item with the value entered
+
+	document.getElementById("taskList").appendChild(newItem);//appends new item to the unordered list  
+	};
+	
+	document.getElementsByTagName("button")[0].addEventListener("click", submitTask);//calls submitTask function on the button click
+
+
+
+
+
+
+
+
+
 
 
 
