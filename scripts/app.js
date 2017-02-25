@@ -6,38 +6,49 @@
 need to make variables for the form, the input and list item
 need to select the form
 need to select the value that is inputted
-need to select the ordered list
+need to select the div
 when someone clicks on the submit button it should 
-put the value that is inputted into the ordered list
+put the value that is inputted into the div 
+(First create an LI node,
+then get the value
+then append the value to the LI node.
+Finally append the LI to the list.)
 display the value on the page
-
-
-First create an LI node,
-then create a Text node,
-then append the Text node to the LI node.
-Finally append the LI node to the list.
-
-
 
 */
 
-var taskForm = document.getElementById("taskForm"); //form
-var taskList = document.getElementById("taskList"); //orderded list
-var button = document.getElementsByTagName("button"); //button
+// var taskForm = document.getElementById("taskForm"); //form
+// //orderded list
+// var button = document.getElementsByTagName("button"); //button
 
 
-function submitTask(){
-	var newItem = document.createElement("li"); //creates an li
-	var taskInput = document.getElementById("user_task").value //get the value from the input field
- 	newItem.appendChild(taskInput);//appends value to the li  
- 	document.getElementById("taskList").appendChild(newItem);//appends to list unordered list
- };
+// document.getElementById("subBtn").addEventListener("click", submitTask);
+
+ function submitTask(taskList, itemText){
+ 	//alert("adding new item");
+ 	event.preventDefault;
+ 	var newItem = document.createElement("li"); //creates an li
+ 	newItem.innerText = itemText;
 
 
-// document.getElementById("subBtn").addEventListener("click", function(){
-//     document.getElementById("taskList").innerHTML = "Hello World";
-// });
+ 	taskList.appendChild(newItem);//appends value to the li  
 
-document.getElementById("subBtn").addEventListener("click", submitTask);
+// 	var taskInput = document.getElementById("user_task").value //get the value from the input field
+//  	
+//  	document.getElementById("taskList").appendChild(newItem);//appends to list unordered list
+  };
+
+
+var btnNew = document.getElementById("subBtn");//button
+// btnNew.onclick = function() {
+// 	alert("Does this button work?");
+// 	console.log("any errors?");
+// };
+
+btnNew.onclick =  function (){
+var itemText = prompt("What should we name this item");
+submitTask(document.getElementById("taskList"), itemText);//no parenthesis because we want to assign the function to the onclick event and not run as soon as we load the page
+};
+
 
 
