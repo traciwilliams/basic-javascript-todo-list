@@ -26,23 +26,33 @@ display the value on the page
 var btnNew = document.getElementById("subBtn");//button
 
 
+// function submitTask() {
+// 	var taskInput = document.getElementsByTagName("input")[0].value;//get the value from the input field	
+// 	document.getElementsByTagName("input")[0].value = ''; //this clears the field for new items to be added
+
+// 	var newItem = document.createElement("li"); //ceates an li
+// 	newItem.innerHTML = taskInput;//makes a list item with the value entered
+
+// 	document.getElementById("taskList").appendChild(newItem);//appends new item to the unordered list  
+	
+// 	};
+	
+// 	document.getElementsByTagName("button")[0].addEventListener("click", submitTask);//calls submitTask function on the button click
+
+
+
 function submitTask() {
 	var taskInput = document.getElementsByTagName("input")[0].value;//get the value from the input field	
-	document.getElementsByTagName("input")[0].value = ''; //this clears the field for new items to be added
+ 	document.getElementsByTagName("input")[0].value = ''; //this clears the field for new items to be added
+ 	var newItem = document.createElement("li"); //creates an li
 
-	var newItem = document.createElement("li"); //ceates an li
-	newItem.innerHTML = taskInput;//makes a list item with the value entered
+ 	var t = document.createTextNode(taskInput);//makes a list item with the value entered
 
-	document.getElementById("taskList").appendChild(newItem);//appends new item to the unordered list  
-	};
-	
-	document.getElementsByTagName("button")[0].addEventListener("click", submitTask);//calls submitTask function on the button click
+ 	newItem.appendChild(t);
+};
 
 
-
-
-
-
+document.getElementsByTagName("button")[0].addEventListener("click", submitTask);//calls submitTask function on the button click
 
 
 
