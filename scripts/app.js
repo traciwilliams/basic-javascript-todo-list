@@ -39,20 +39,27 @@ var btnNew = document.getElementById("subBtn");//button
 	
 // 	document.getElementsByTagName("button")[0].addEventListener("click", submitTask);//calls submitTask function on the button click
 
+	
 
+function submitTask(e) {
+	//var taskInput = document.getElementsByTagName("input")[0].value;//get the value from the input field	
+ 	//document.getElementsByTagName("input")[0].value = ''; //this clears the field for new items to be added
 
-function submitTask() {
-	var taskInput = document.getElementsByTagName("input")[0].value;//get the value from the input field	
- 	document.getElementsByTagName("input")[0].value = ''; //this clears the field for new items to be added
+ 	"use strict";
+    e.preventDefault();
+
+    var taskList = document.getElementById("taskList");
  	var newItem = document.createElement("li"); //creates an li
-
+ 	var taskInput = document.getElementsByTagName("input")[0].value;//get the value from the input field
  	var t = document.createTextNode(taskInput);//makes a list item with the value entered
-
  	newItem.appendChild(t);
+
+ 	taskList.innerHTML += '<li>' + taskInput + '</li>';
 };
 
 
 document.getElementsByTagName("button")[0].addEventListener("click", submitTask);//calls submitTask function on the button click
+
 
 
 
