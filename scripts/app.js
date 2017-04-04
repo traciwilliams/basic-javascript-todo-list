@@ -1,6 +1,6 @@
-// window.onload = function(){
-// 	console.log("javascript file loaded");
-// };
+window.onload = function(){
+	console.log("javascript file loaded");
+};
 
 /*PSUEDO CODE --- 
 need to make variables for the form, the input and list item
@@ -41,7 +41,7 @@ var btnNew = document.getElementById("subBtn");//button
 
 	
 
-function submitTask(e) {
+/*function submitTask(e) {
 	//var taskInput = document.getElementsByTagName("input")[0].value;//get the value from the input field	
  	//document.getElementsByTagName("input")[0].value = ''; //this clears the field for new items to be added
 
@@ -59,6 +59,40 @@ function submitTask(e) {
 
 
 document.getElementsByTagName("button")[0].addEventListener("click", submitTask);//calls submitTask function on the button click
+*/
+
+
+//making our todoList object
+//an empty array to push the todos into
+var todoList = {
+		todos:[], 
+		
+		displayToDos: function() {
+			console.log("My To Dos", this.todos);
+		},
+
+		addToDo: function(todoText) {
+			this.todos.push ({
+				todoText: todoText,
+				completed: false
+			});
+			this.displayToDos();
+		},
+
+		changeToDo: function(position, todoText) {
+			this.todos[position].todoText = todoText;
+			this.displayToDos();
+		},
+		deleteToDo: function(position) {
+			this.todos.splice(position, 1);
+			this.displayToDos();
+		},
+		toggleCompleted: function(position) {
+			var todo = this.todos[position];
+			todo.completed = !todo.completed;
+			this.displayToDos();
+		}
+  };	
 
 
 
