@@ -128,7 +128,12 @@ var todoList = {
 
 
 
+var displayToDosButton = document.getElementById("displayToDosButton");
+console.log(displayToDosButton);
 
+displayToDosButton.addEventListener('click', function() {
+	todoList.displayToDos();
+})
 
 
 
