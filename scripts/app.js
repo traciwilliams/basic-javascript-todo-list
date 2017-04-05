@@ -129,11 +129,15 @@ var todoList = {
 
 
 var displayToDosButton = document.getElementById("displayToDosButton");
-console.log(displayToDosButton);
+var toggleAllButton = document.getElementById("toggleAllButton");
+console.log(toggleAllButton);
 
-displayToDosButton.addEventListener('click', function() {
+displayToDosButton.addEventListener("click", function() {
 	todoList.displayToDos();
-})
+});
 
+toggleAllButton.addEventListener("click", function() {
+	todoList.toggleAll();
+})
 
 
