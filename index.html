@@ -10,8 +10,26 @@
 
 
 
-<button id="displayToDosButton">Display ToDos</button>
-<button id="toggleAllButton">Toggle All</button>
+<button id="displayToDosButton" onclick="buttonHandlers.displayToDos()">Display ToDos</button>
+
+
+<div>
+	<button onclick="buttonHandlers.addToDo()">Add To Do</button>
+	<input id="addToDoTextInput" type="text">
+</div>
+
+
+<div>
+	<button onclick="buttonHandlers.changeToDo()">Change To Do</button>
+	<input id="changeToDoPositionInput" type="number">
+	<input id="changeToDoPositionText" type="text">
+</div>
+
+
+<button id="toggleAllButton" onclick="buttonHandlers.toggleAll()">Toggle All</button>
+
+
+
 
 
 

@@ -127,17 +127,37 @@ var todoList = {
   };		
 
 
+var buttonHandlers = {
+	displayToDos: function() {
+		todoList.displayToDos();
+	},
 
-var displayToDosButton = document.getElementById("displayToDosButton");
-var toggleAllButton = document.getElementById("toggleAllButton");
-console.log(toggleAllButton);
+	addToDo: function() {
+		var addToDoTextInput = document.getElementById("addToDoTextInput");
+		todoList.addToDo(addToDoTextInput.value);
+		addToDoTextInput.value = "";
+	},
 
-displayToDosButton.addEventListener("click", function() {
-	todoList.displayToDos();
-});
+	changeToDo: function() {
+		var changeToDoPositionInput = document.getElementById("changeToDoPositionInput");
+		var changeToDoPositionText = document.getElementById("changeToDoPositionText");
 
-toggleAllButton.addEventListener("click", function() {
-	todoList.toggleAll();
-})
+		todoList.changeToDo(changeToDoPositionInput.valueAsNumber,changeToDoPositionText.value);
+	
+		changeToDoPositionInput.value = "";
+		changeToDoPositionText.value = "";
+	},
+
+	
+
+	toggleAll: function() {
+		todoList.toggleAll();
+	}
+
+};
+
+
+
+
 
 
