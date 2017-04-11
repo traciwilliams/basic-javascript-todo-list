@@ -148,7 +148,17 @@ var buttonHandlers = {
 		changeToDoPositionText.value = "";
 	},
 
-	
+	deleteToDo: function() {
+		var deleteToDoButton = document.getElementById("deleteToDoButton");
+		var deleteToDoButtonInput = document.getElementById("deleteToDoButtonInput");
+		todoList.deleteToDo(deleteToDoButtonInput.valueAsNumber);
+
+		deleteToDoButtonInput.value = "";
+	},
+
+
+
+
 
 	toggleAll: function() {
 		todoList.toggleAll();
