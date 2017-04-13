@@ -66,7 +66,7 @@ document.getElementsByTagName("button")[0].addEventListener("click", submitTask)
 //an empty array to push the todos into
 var todoList = {
 		todos:[], 
-		
+		todoComment: [],
 		displayToDos: function() {
 			if(this.todos.length === 0){
 				console.log("Your Todo List is Empty");
@@ -90,6 +90,24 @@ var todoList = {
 			});
 			this.displayToDos();
 		},
+
+
+
+
+		addComment: function(todoComment) {
+			this.todoComment.push ({
+				todoComment: todoComment
+			});
+			console.log(this.todoComment)
+		},
+
+
+
+
+
+
+
+
 
 		changeToDo: function(position, todoText) {
 			this.todos[position].todoText = todoText;
@@ -137,6 +155,22 @@ var buttonHandlers = {
 		todoList.addToDo(addToDoTextInput.value);
 		addToDoTextInput.value = "";
 	},
+
+
+
+
+	addComment: function() {
+
+		var addCommentInput = document.getElementById("addCommentInput");
+		todoList.addComment(addCommentInput.value);
+		addCommentInput.value ="";
+	},
+
+
+
+
+
+
 
 	changeToDo: function() {
 		var changeToDoPositionInput = document.getElementById("changeToDoPositionInput");

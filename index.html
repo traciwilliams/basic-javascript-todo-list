@@ -20,6 +20,14 @@
 
 
 <div>
+	<button onclick="buttonHandlers.addComment()">Add Comment</button>
+	<input id="addCommentInput" type="text">
+</div>
+
+
+
+
+<div>
 	<button onclick="buttonHandlers.changeToDo()" >Change To Do</button>
 	<input id="changeToDoPositionInput" type="number" placeholder="number">
 	<input id="changeToDoPositionText" type="text" placeholder="text">
@@ -30,7 +38,7 @@
 </div>
 <div> 
 	<button onclick="buttonHandlers.deleteToDo()" id="deleteToDoButton">Delete To Do</button>
-	<input id="deleteToDoButtonInput" type="number">
+	<input id="deleteToDoButtonInput" type="number" placeholder="delete to do">
 </div>
 
 
@@ -38,6 +46,7 @@
 	<button onclick="buttonHandlers.toggleCompleted()" id="toggleCompInputButton">Toggle Completed</button>
 	<input id="toggleCompInput" type="number">
 </div>
+ 
 
 
 
