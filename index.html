@@ -25,15 +25,19 @@
 	<input id="changeToDoPositionText" type="text" placeholder="text">
 </div>
 
-
-<button id="toggleAllButton" onclick="buttonHandlers.toggleAll()">Toggle All</button>
-
 <div>
+	<button id="toggleAllButton" onclick="buttonHandlers.toggleAll()">Toggle All</button>
+</div>
+<div> 
 	<button onclick="buttonHandlers.deleteToDo()" id="deleteToDoButton">Delete To Do</button>
 	<input id="deleteToDoButtonInput" type="number">
 </div>
 
 
+<div>
+	<button onclick="buttonHandlers.toggleCompleted()" id="toggleCompInputButton">Toggle Completed</button>
+	<input id="toggleCompInput" type="number">
+</div>
 
 
 

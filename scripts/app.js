@@ -74,9 +74,9 @@ var todoList = {
 				console.log("My todos:");
 				for (var i = 0; i < this.todos.length; i++) {
 					if (this.todos[i].completed === true) {
-					console.log('(x)', this.todos[i].todoText); 
+					console.log('(completed)', this.todos[i].todoText); 
 					} else {
-					console.log('()', this.todos[i].todoText);
+					console.log('(not completed)', this.todos[i].todoText);
 			  }
 			}
 		  }
@@ -156,9 +156,15 @@ var buttonHandlers = {
 		deleteToDoButtonInput.value = "";
 	},
 
+	toggleCompleted: function() {
+		var toggleCompInputButton = document.getElementById("toggleCompdInputButton");
+		var toggleCompInput = document.getElementById("toggleCompInput");
 
+		todoList.toggleCompleted(toggleCompInput.valueAsNumber);
 
+		toggleCompInput.value = "";
 
+	},
 
 	toggleAll: function() {
 		todoList.toggleAll();
