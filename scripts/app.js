@@ -98,7 +98,7 @@ var todoList = {
 			this.todoComment.push ({
 				todoComment: todoComment
 			});
-			console.log(this.todoComment)
+			console.log(this.todoComment);
 		},
 
 
@@ -159,12 +159,11 @@ var buttonHandlers = {
 
 
 
-	addComment: function() {
-
-		var addCommentInput = document.getElementById("addCommentInput");
-		todoList.addComment(addCommentInput.value);
-		addCommentInput.value ="";
-	},
+	// addComment: function() {
+	// 	var addCommentInput = document.getElementById("addCommentInput");
+	// 	todoList.addComment(addCommentInput.value);
+	// 	addCommentInput.value ="";
+	// },
 
 
 
@@ -208,6 +207,17 @@ var buttonHandlers = {
 
 
 
+
+
+
+var view = {
+	displayToDos: function(){
+		var todosLi = document.createElement("li");
+		var todosUl = document.querySelector("ul");
+
+		todosUl.appendChild(todosLi);
+	}
+};
 
 
 
