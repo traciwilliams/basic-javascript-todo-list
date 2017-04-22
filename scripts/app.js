@@ -67,20 +67,20 @@ document.getElementsByTagName("button")[0].addEventListener("click", submitTask)
 var todoList = {
 		todos:[], 
 		todoComment: [],
-		displayToDos: function() {
-			if(this.todos.length === 0){
-				console.log("Your Todo List is Empty");
-			} else {
-				console.log("My todos:");
-				for (var i = 0; i < this.todos.length; i++) {
-					if (this.todos[i].completed === true) {
-					console.log('(completed)', this.todos[i].todoText); 
-					} else {
-					console.log('(not completed)', this.todos[i].todoText);
-			  }
-			}
-		  }
-		},	
+		// displayToDos: function() {
+		// 	if(this.todos.length === 0){
+		// 		console.log("Your Todo List is Empty");
+		// 	} else {
+		// 		console.log("My todos:");
+		// 		for (var i = 0; i < this.todos.length; i++) {
+		// 			if (this.todos[i].completed === true) {
+		// 			console.log('(completed)', this.todos[i].todoText); 
+		// 			} else {
+		// 			console.log('(not completed)', this.todos[i].todoText);
+		// 	  }
+		// 	}
+		//   }
+		// },	
 
 
 		addToDo: function(todoText) {
@@ -146,10 +146,7 @@ var todoList = {
 
 
 var buttonHandlers = {
-	displayToDos: function() {
-		todoList.displayToDos();
 
-	},
 
 	addToDo: function() {
 		var addToDoTextInput = document.getElementById("addToDoTextInput");
