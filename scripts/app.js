@@ -216,7 +216,7 @@ var view = {
 		todosUl.innerHTML = "";
 		for (var i = 0; i < todoList.todos.length; i++) {
 			var todosLi = document.createElement("li");
-			
+			todosLi.textContent = todoList.todos[i].todoText;
 
 			todosUl.appendChild(todosLi);
 		}
