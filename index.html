@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Basic To Do List in Javascript</h1>
+<h1>To Do List</h1>
 
 
 
@@ -18,22 +18,9 @@
 </div>
 
 
-
-
-
-
-<!-- <div>
-	<button onclick="buttonHandlers.addComment()">Add Comment</button>
-	<input id="addCommentInput" type="text">
-</div> -->
-
-
-
-
-
-
-
-
+<div>
+	<button id="toggleAllButton" onclick="buttonHandlers.toggleAll()">Toggle All</button>
+</div>
 
 
 
@@ -43,9 +30,7 @@
 	<input id="changeToDoPositionText" type="text" placeholder="text">
 </div>
 
-<div>
-	<button id="toggleAllButton" onclick="buttonHandlers.toggleAll()">Toggle All</button>
-</div>
+
 <div> 
 	<button onclick="buttonHandlers.deleteToDo()" id="deleteToDoButton">Delete To Do</button>
 	<input id="deleteToDoButtonInput" type="number" placeholder="delete to do">
