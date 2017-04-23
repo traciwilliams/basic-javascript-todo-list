@@ -1,10 +1,10 @@
 
 
 ul {
-	list-style: none;
 	padding: 0;
 	margin: 0;
 	width: 500px;
+	background-color: green;
 }
 
 li {
@@ -12,4 +12,5 @@ li {
 	background: #eee;
 	padding: 5px 10px;
 	color: #000;
+	background-color: blue;
 }
