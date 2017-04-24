@@ -156,7 +156,7 @@ var buttonHandlers = {
 
 
 var view = {
-	displayToDos: function(){
+	displayToDos: function() {
 		var todosUl = document.querySelector("ul");
 		todosUl.innerHTML = "";
 		for (var i = 0; i < todoList.todos.length; i++) {
@@ -171,10 +171,18 @@ var view = {
 				todoTextWithCompletion = '( ) ' + todo.todoText;
 			}
 
+			todosLi.id = i;
 			todosLi.textContent = todoTextWithCompletion;
-			//todosLi.textContent = todoList.todos[i].todoText;
+			todosLi.appendChild(this.createDeleteButton());
 			todosUl.appendChild(todosLi);
 		}
+	},
+
+	createDeleteButton: function() {
+		var deleteButton = document.createElement("button");
+		deleteButton.textContent = "Delete";
+		deleteButton.className = "deleteButton";
+		return deleteButton;
 	}
 };
 
