@@ -120,13 +120,10 @@ var buttonHandlers = {
 		view.displayToDos();
 	},
 
-	deleteToDo: function() {
-		var deleteToDoButton = document.getElementById("deleteToDoButton");
-		var deleteToDoButtonInput = document.getElementById("deleteToDoButtonInput");
-		todoList.deleteToDo(deleteToDoButtonInput.valueAsNumber);
-
-		deleteToDoButtonInput.value = "";
-
+	deleteToDo: function(position) {
+		//var deleteToDoButton = document.getElementById("deleteToDoButton");
+		//var deleteToDoButtonInput = document.getElementById("deleteToDoButtonInput");
+		todoList.deleteToDo(position);
 		view.displayToDos();
 	},
 
@@ -183,8 +180,21 @@ var view = {
 		deleteButton.textContent = "Delete";
 		deleteButton.className = "deleteButton";
 		return deleteButton;
+	},
+
+	setUpEventListeners: function() {
+		var todosUl = document.querySelector("ul");
+		todosUl.addEventListener("click", function(event){
+		console.log(event.target.parentNode.id);
+
+		var elementClicked = event.target;
+		if(elementClicked.className === "deleteButton"){
+		buttonHandlers.deleteToDo(parseInt(elementClicked.parentNode.id));	
+			}
+		});	
 	}
 };
+	view.setUpEventListeners();
 
 
 
