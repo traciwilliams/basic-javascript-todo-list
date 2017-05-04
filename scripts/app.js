@@ -48,19 +48,28 @@ var todoList = {
 		toggleAll: function() {
 			var totalTodos = this.todos.length;
 			var completedTodos = 0;
-			var todo = this.todos[position];
+			//var todo = this.todos[position];
 
-			
-			this.todos.forEach(function(todo) {
-				if(completedTodos === totalTodos) {
-					todo.completed = false;
-				} else {
-					todo.completed = true;
+			//get number of completed todos
+			for (var i=0; i < totalTodos; i++){
+				if(this.todos[i].completed === true) {
+					completedTodos++;
+				}
 			}
-		
-  		});
-  	}
-  };		
+			//if everything is true, make everything false
+			//this.todos.forEach(function(todo) {
+			if(completedTodos === totalTodos) {
+				for (var i = 0; i < totalTodos; i++) {
+					this.todos[i].completed = false;
+				}
+				} else {
+				for (var i = 0; i < totalTodos; i++) {
+
+				}
+			}
+			//this.displayToDos()
+  		}
+  	};		
 
 
 var buttonHandlers = {
@@ -113,13 +122,11 @@ var buttonHandlers = {
 
 
 
-
-
-
 var view = {
 	displayToDos: function() {
 		var todosUl = document.querySelector("ul");
 		todosUl.innerHTML = "";
+		
 		todoList.todos.forEach (function(todo, position) {
 			var todosLi = document.createElement("li");
 			var todoTextWithCompletion = "";
