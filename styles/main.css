@@ -19,3 +19,55 @@ li {
 	font-size: 16px;
 	color: purple;
 }
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (min-width: 480px) {
+	body {
+		background-color: lightgreen;
+	}
+}
+
+
+
+@media screen and (min-width: 768px) {
+	body {
+		background-color: blue;
+		color: #fff;
+	}
+	
+	h1,
+	li, 
+	button {
+		color: #fff;
+	}
+
+	li {
+		font-family: 'Lato', sans-serif;
+	}
+}
+
+
+@media screen and (min-width: 960px) {
+	body {
+		background-color: lightgray;
+	}
+
+	input {
+		width: 50%;
+	}
+
+	h1,
+	li, 
+	button {
+		color: #000;
+	}
+
+	li {
+		font-family: 'Roboto', sans-serif;
+	}
+}
+
+
+
